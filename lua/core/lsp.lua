@@ -13,10 +13,11 @@ vim.diagnostic.config({
     }
 })
 local ui = require("fzf-lua")
+ui.register_ui_select()
 vim.keymap.set("n", "K", vim.lsp.buf.hover, {})
 vim.keymap.set("n", "gi", ui.lsp_implementations, {})
 vim.keymap.set("n", "gd", ui.lsp_definitions, {})
-vim.keymap.set({ "n", "v" }, "<leader>ca", vim.lsp.buf.code_action, {})
+vim.keymap.set({ "n", "v" }, "<leader>ca", ui.lsp_code_actions, {silent = true})
 vim.keymap.set({ "n", "v" }, "gr", ui.lsp_references, {})
 vim.keymap.set('n', '<leader>en', "<cmd>lua vim.diagnostic.goto_next({ severity = vim.diagnostic.severity.ERROR })<CR>", { noremap = true, silent = true })
 vim.keymap.set('n', '<leader>ep', "<cmd>lua vim.diagnostic.goto_prev({ severity = vim.diagnostic.severity.ERROR })<CR>", { noremap = true, silent = true })
