@@ -5,7 +5,7 @@ return {
 	config = function()
 		local config = require("nvim-treesitter.configs")
 		config.setup({
-			ensure_installed = {"lua", "c_sharp", "sql", "angular", "html", "cpp"},
+			ensure_installed = {"lua", "c_sharp", "sql", "angular", "html", "cpp", "json"},
 			highlight = {enable = true},
 			-- indent = {enable = true},
             incremental_selection = {

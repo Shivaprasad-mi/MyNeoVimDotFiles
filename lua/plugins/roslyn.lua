@@ -3,6 +3,12 @@ return {
     ---@module 'roslyn.config'
     ---@type RoslynNvimConfig
     opts = {
-        -- your configuration comes here; leave empty for default settings
+        filewatching = "roslyn",
+        choose_target = function(targets)
+            return vim.iter(targets):find(function(item)
+                return item:match("%.sln$")
+            end)
+        end,
+        lock_target = true
     },
 }

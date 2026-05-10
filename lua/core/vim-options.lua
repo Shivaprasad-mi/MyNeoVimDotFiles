@@ -15,6 +15,7 @@ vim.opt.wrap = false
 vim.opt.sidescroll = 1
 vim.opt.sidescrolloff = 8
 vim.opt.cursorline = true
+vim.keymap.set("v", "/", [[<Esc>/\%V]], { desc = "Real-time search in selection" })
 
 local modes = {'n', 'v'};
 local options = { noremap = true, silent = true };
