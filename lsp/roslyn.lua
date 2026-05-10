@@ -12,14 +12,18 @@ return {
     root_markers = { "*.sln", "*.slnx", "*.csproj", ".git" },
     on_attach = function(client, bufnr)
         local root = client.config.root_dir or vim.fn.getcwd()
-        local sln = vim.fn.globpath(root, "*.sln", false, true)
-        if #sln == 0 then
-            sln = vim.fn.globpath(root, "*.slnx", false, true)
-        end
 
-        if #sln > 0 then
+        local candidates = vim.fn.globpath(root, "*.sln", false, true)
+        vim.list_extend(candidates, vim.fn.globpath(root, "*.slnx", false, true))
+
+        -- Prefer .sln over .slnx when both exist
+        local choice = vim.iter(candidates):find(function(p)
+            return p:match("%.sln$")
+        end) or candidates[1]
+
+        if choice then
             client:notify("solution/open", {
-                solution = vim.uri_from_fname(sln[1]),
+                solution = vim.uri_from_fname(choice),
             })
         else
             local csproj = vim.fn.globpath(root, "**/*.csproj", false, true)

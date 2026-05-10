@@ -10,7 +10,6 @@ vim.lsp.config("*", {
 })
 
 vim.lsp.enable({
-    "clangd",
     "ts_ls",
     "lua_ls",
     "roslyn",

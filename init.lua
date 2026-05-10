@@ -10,6 +10,9 @@ end
 
 require("core.vim-options")
 require("core.templates")
+require("core.add-context")
+require("core.smart-getfile")
+require("core.windows-specific")
 require("plugins")
 require("core.checkbox")
 require("core.lsp")

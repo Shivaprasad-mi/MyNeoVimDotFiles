@@ -1,6 +1,6 @@
 local ts = require("nvim-treesitter")
 
-ts.install({ "lua", "c_sharp", "sql", "angular", "html", "cpp" })
+ts.install({ "lua", "c_sharp", "sql", "angular", "html", "cpp", "json" })
 
 vim.api.nvim_create_autocmd("FileType", {
     callback = function()
