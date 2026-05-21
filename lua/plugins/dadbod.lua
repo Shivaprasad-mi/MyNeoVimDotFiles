@@ -1,8 +1,2 @@
-return {
-  "tpope/vim-dadbod",
-  dependencies = {
-    "kristijanhusak/vim-dadbod-ui",
-    "kristijanhusak/vim-dadbod-completion",
-  },
-  cmd = { "DBUI", "DBUIToggle", "DBUIAddConnection" },
-}
+-- vim-dadbod and friends are vimscript plugins; loaded by vim.pack, no lua setup needed.
+-- Commands available: :DBUI, :DBUIToggle, :DBUIAddConnection

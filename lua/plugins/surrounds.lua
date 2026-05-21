@@ -1,4 +1,1 @@
-return {
-	'tpope/vim-surround',
-	Lazy = false
-}
+-- vim-surround is a vimscript plugin; loaded by vim.pack, no lua setup needed.
