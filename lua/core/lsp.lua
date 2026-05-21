@@ -1,7 +1,8 @@
 vim.lsp.enable({
     "clangd",
     "ts_ls",
-    "lua_ls"
+    "lua_ls",
+    "roslyn"
 })
 vim.diagnostic.config({
     virtual_text = {spacing = 4},
