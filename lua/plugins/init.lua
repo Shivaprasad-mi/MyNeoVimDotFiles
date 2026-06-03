@@ -38,20 +38,9 @@ vim.pack.add({
     { src = "https://github.com/lewis6991/gitsigns.nvim" },
     { src = "https://github.com/tpope/vim-fugitive" },
 
-    -- Database
-    { src = "https://github.com/tpope/vim-dadbod" },
-    { src = "https://github.com/kristijanhusak/vim-dadbod-ui" },
-    { src = "https://github.com/kristijanhusak/vim-dadbod-completion" },
-
     -- Markdown
     { src = "https://github.com/MeanderingProgrammer/render-markdown.nvim" },
 
-    -- Rust
-    { src = "https://github.com/mrcjkb/rustaceanvim", version = vim.version.range("^5") },
-    { src = "https://github.com/saecki/crates.nvim", version = "stable" },
-
-    -- Personal plugin
-    { src = "https://github.com/shivaprasad-i/custom-functions.nvim" },
 })
 
 -- Setup order matters for a few: theme first, completion before LSP plugins reference it,
@@ -69,6 +58,3 @@ require("plugins.oil")
 require("plugins.quicker")
 require("plugins.surrounds")
 require("plugins.markdown")
-require("plugins.rust")
-require("plugins.custom-functions")
-require("plugins.dadbod")
