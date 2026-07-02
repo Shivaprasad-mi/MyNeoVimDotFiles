@@ -30,19 +30,19 @@ return {
             vim.api.nvim_win_set_cursor(0, { er + 1, math.max(ec - 1, 0) })
         end
 
-        vim.keymap.set({ "n", "x" }, "<CR>", function()
-            local node
-            if vim.fn.mode() == "n" then
-                stack = {}
-                node = vim.treesitter.get_node()
-            else
-                local top = stack[#stack]
-                node = top and top:parent() or vim.treesitter.get_node()
-            end
-            if not node then return end
-            table.insert(stack, node)
-            select_node(node)
-        end, { desc = "TS incremental selection" })
+        -- vim.keymap.set({ "n", "x" }, "<CR>", function()
+        --     local node
+        --     if vim.fn.mode() == "n" then
+        --         stack = {}
+        --         node = vim.treesitter.get_node()
+        --     else
+        --         local top = stack[#stack]
+        --         node = top and top:parent() or vim.treesitter.get_node()
+        --     end
+        --     if not node then return end
+        --     table.insert(stack, node)
+        --     select_node(node)
+        -- end, { desc = "TS incremental selection" })
 
         vim.keymap.set("x", "<BS>", function()
             if #stack <= 1 then return end

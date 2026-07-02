@@ -37,7 +37,6 @@ require("lazy").setup({
     },
     change_detection = { notify = false }
 })
-require('core.checkbox')
 require('core.lsp')
 
 -- to supress the initial error for gd,gi functions temporary fix
